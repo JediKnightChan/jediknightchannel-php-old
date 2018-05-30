@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JediKnightChannel{% endblock %}
+
+{% block body %}
+    <div id="body">
+        <div class="header">
+            <div>
+                <h1 id="h-news">{{ news.title }}</h1>
+                <img src="{{ asset(news.img) }}" height="432px" width="769px" alt="">
+                <h2>{{ news.l_title }}</h2>
+                <p>{{ news.body }}</p>
+                {% if news.body.link_title is defined %}
+                    <p><a href="{{ news.body.link_url }}">{{ news.body.link_title }}</a></p>
+                {% endif %}
+                <a href="/news" class="more">Назад</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

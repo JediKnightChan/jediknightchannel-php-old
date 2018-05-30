@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JediKnightChannel - MEDIA{% endblock %}
+
+{% block body %}
+    <div id="body">
+        <div class="header">
+            <div class="contact">
+                <h1>Связаться</h1>
+                <h2>Заполните форму ниже</h2>
+                <form method="post">
+                    <input type="text" name="name" value="Псевдоним" onblur="this.value=!this.value?'Псевдоним':this.value;" onfocus="this.select()" onclick="this.value='';" required="">
+                    <input type="email" name="address" value="Адрес электронной почты" onblur="this.value=!this.value?'Адрес электронной почты':this.value;" onfocus="this.select()" onclick="this.value='';" required="">
+                    <input type="text" name="subject" value="Тема" onblur="this.value=!this.value?'Тема':this.value;" onfocus="this.select()" onclick="this.value='';" required="">
+                    <textarea name="message" cols="50" rows="7" required=""></textarea>
+
+                    <input type="submit" value="Отправить" id="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

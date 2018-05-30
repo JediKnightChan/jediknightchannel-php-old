@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JediKnightChan - Перевод{% endblock %}
+
+{% block body %}
+    <div id="body" class="noselect">
+        <div class="header">
+            <div>
+                <h1 class="noimgbelow">SWTOR</h1>
+                <div class="btn">
+                    <a href="/translation">Принять участие в открытом редактировании</a>
+                </div>
+                <ul>
+
+                    {% for n in news %}
+                        <li>
+                            <a href="/news/{{ n.url }}">
+                                <img src="{{ asset(n.img) }}" width="380px" height="214px" alt="">
+                            </a>
+                            <div>
+                                <h1>{{ n.title }}</h1>
+                                <p>{{ n.l_body }}</p>
+                                <a href="/news/{{ n.url }}" class="more">Узнать больше</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

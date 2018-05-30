@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JediKnightChannel{% endblock %}
+
+{% block body %}
+    <div id="body" class="home">
+        <div class="header">
+            <div>
+                <h1>JediKnight</h1>
+                <h2>SWTOR</h2>
+                <a href="/media" class="more">Узнать больше</a>
+                <div id="sect" class="hide_on_mobile">
+                    <h3>Категории</h3>
+                </div>
+                <ul>
+                    <li class="hide_on_mobile">
+                        <a href="https://www.eternalcrusade.com/"><img src="{{ asset('public/images/project-image1.jpg') }}"
+                                                                       alt=""></a>
+                    </li>
+                    <li class="hide_on_mobile">
+                        <a href="http://www.swtor.com/"><img src="{{ asset('public/images/project-image2.jpg') }}" alt=""></a>
+                    </li>
+                    <li class="hide_on_mobile">
+                        <a href="https://blackdesert.ru/"><img src="{{ asset('public/images/project-image3.png') }}"
+                                                               alt=""></a>
+                    </li>
+                    <li class="hide_on_mobile">
+                        <a href="https://playoverwatch.com/ru-ru/"><img src="{{ asset('public/images/project-image4.png') }}"
+                                                                        alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="body">
+            <div>
+                <h1>Состояние</h1>
+                <p>Идёт локализация SWTOR. Перевод имён NPC завершён! Перевод скиллов - 15%; перевод локаций - 10%</p>
+                <h1 class="timer-header">ОБТ:</h1>
+                <a href="setup.exe" id="download">Скачать русификатор</a>
+            </div>
+        </div>
+        <div class="footer">
+            <div>
+                <ul>
+                    <li>
+                        <h1>Видео</h1>
+                        <a href="https://www.youtube.com/watch?v=W2SIRENV1Rs">
+                            <img src="{{ asset('public/images/preview1.jpg') }}" alt=""><span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <h1>Последние новости</h1>
+                        <ul>
+                            {% for n in news %}
+                            <li>
+                                <a href="/news/{{ n.url }}"><img src="{{ asset(n.img) }}" height="60px" alt=""></a>
+                                <h1>{{ n.title }}</h1>
+                                <a href="/news/{{ n.url }}" class="more">Узнать больше</a>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
